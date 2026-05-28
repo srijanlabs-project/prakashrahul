@@ -199,27 +199,68 @@ export default function RahulPrakashWebsite() {
     },
   ];
 
-  const photographyShots = [
+  const photographyGroups = [
     {
-      title: 'Street & Culture',
-      image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop',
+      title: 'People & Portraits',
+      description: 'Human stories, emotions, and expressions across candid moments.',
+      photos: [
+        { title: 'Joy In Motion', image: '/photos/DSC_0171.JPG' },
+        { title: 'Skyward Gaze', image: '/photos/people.JPG' },
+        { title: 'Twilight Silhouette', image: '/photos/people_1.JPG' },
+        { title: 'Community Portrait', image: '/photos/people_2.JPG' },
+        { title: 'Close Portrait Study', image: '/photos/DSC_0237.JPG' },
+      ],
     },
     {
-      title: 'Urban Frames',
-      image: 'https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop',
+      title: 'Culture & Traditions',
+      description: 'Festivals, rituals, and everyday cultural textures.',
+      photos: [
+        { title: 'Grih Pravesh Ritual', image: '/photos/grihparvesh%20(758).JPG' },
+        { title: 'Color Splash Festival', image: '/photos/culture.JPG' },
+        { title: 'Festival Play', image: '/photos/culture_1.JPG' },
+        { title: 'Potter At Work', image: '/photos/DSC_0407.JPG' },
+        { title: 'Little Tibet Streetscape', image: '/photos/DSC_0265.JPG' },
+      ],
     },
     {
-      title: 'Travel Stories',
-      image: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop',
+      title: 'Wildlife & Nature',
+      description: 'Encounters with wild life, birds, and natural behavior.',
+      photos: [
+        { title: 'Forest Tiger Trail', image: '/photos/wildlife.JPG' },
+        { title: 'Tiger In Tall Grass', image: '/photos/DSC_1420.JPG' },
+        { title: 'Elephant Tusk Detail', image: '/photos/DSC_1419.JPG' },
+        { title: 'Elephant Bath', image: '/photos/DSC_6510.JPG' },
+        { title: 'Langur On Branch', image: '/photos/DSC_6944.JPG' },
+        { title: 'Seagull In Flight', image: '/photos/DSC_2138.JPG' },
+      ],
     },
     {
-      title: 'Light & Perspective',
-      image: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=1200&auto=format&fit=crop',
+      title: 'Monuments & Architecture',
+      description: 'Built heritage, geometry, and structural forms.',
+      photos: [
+        { title: 'Gateway & Taj Frame', image: '/photos/monuments.JPG' },
+        { title: 'Color Study In Structure', image: '/photos/DSC_0516.JPG' },
+      ],
+    },
+    {
+      title: 'Waterscapes & Journeys',
+      description: 'Boats, shorelines, and light across travel landscapes.',
+      photos: [
+        { title: 'Sunset Boats', image: '/photos/RPP_3308.JPG' },
+        { title: 'Harbor At Dusk', image: '/photos/DSC_0238.JPG' },
+        { title: 'Backwaters Morning', image: '/photos/DSC_1211.JPG' },
+        { title: 'Golden Hour Crossing', image: '/photos/RPP_2714.JPG' },
+        { title: 'Blue Water Horizon', image: '/photos/RPP_3590.JPG' },
+        { title: 'Red Sun Over Harbor', image: '/photos/RPP_1974.JPG' },
+        { title: 'Round Boat Stillness', image: '/photos/DSC_0329.JPG' },
+        { title: 'Light Through Clouds', image: '/photos/DSC_0766.JPG' },
+        { title: 'Sea Sparkle Drift', image: '/photos/RPP_2800.JPG' },
+      ],
     },
   ];
 
   return (
-    <div className="min-h-screen overflow-x-hidden bg-black text-white">
+    <div className="min-h-screen overflow-x-clip bg-black text-white">
       <div className="fixed inset-0 pointer-events-none opacity-20">
         <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-cyan-500 blur-[140px]" />
         <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-blue-500 blur-[140px]" />
@@ -419,23 +460,34 @@ export default function RahulPrakashWebsite() {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {photographyShots.map((photo) => (
-            <div key={photo.title} className="group overflow-hidden rounded-[32px] border border-white/10 bg-slate-900">
-              <div className="relative h-80 overflow-hidden">
-                <Image
-                  src={photo.image}
-                  alt={photo.title}
-                  fill
-                  sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
-                  className="object-cover transition duration-500 group-hover:scale-110"
-                />
+        <div className="space-y-14">
+          {photographyGroups.map((group) => (
+            <div key={group.title}>
+              <div className="mb-6 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
+                <h4 className="text-2xl font-black text-cyan-300 sm:text-3xl">{group.title}</h4>
+                <p className="text-sm text-slate-400 sm:text-base">{group.description}</p>
+              </div>
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+              <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+                {group.photos.map((photo) => (
+                  <div key={photo.image} className="group overflow-hidden rounded-[32px] border border-white/10 bg-slate-900">
+                    <div className="relative h-80 overflow-hidden">
+                      <Image
+                        src={photo.image}
+                        alt={photo.title}
+                        fill
+                        sizes="(min-width: 1280px) 25vw, (min-width: 768px) 50vw, 100vw"
+                        className="object-cover transition duration-500 group-hover:scale-110"
+                      />
 
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h4 className="text-2xl font-black text-white">{photo.title}</h4>
-                </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
+
+                      <div className="absolute bottom-0 left-0 right-0 p-6">
+                        <h5 className="text-xl font-black text-white">{photo.title}</h5>
+                      </div>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
