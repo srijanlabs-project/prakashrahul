@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { CompanyLogoCard } from "./components/company-logo-card";
 import logoFutureGroup from "@/asset/logo_1.png";
 import logoBigBazaar from "@/asset/logo_2.png";
@@ -23,6 +24,16 @@ import logoSpan from "@/asset/brand_1.png";
 import logoSamsonaServices from "@/asset/brand_3.png";
 import logoBroadway from "@/asset/brand_4.png";
 import logoSiddhivinayakHomes from "@/asset/brand/final-brand-assets/brand_2.png";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "./lib/seo-config";
+
+export const metadata: Metadata = {
+  title:
+    "Rahul Prakash | Product Management Consultant, Digital Commerce & AI Product Leader",
+  description: SITE_DESCRIPTION,
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default function RahulPrakashWebsite() {
   const experience = [
@@ -204,34 +215,35 @@ export default function RahulPrakashWebsite() {
       title: 'People & Portraits',
       description: 'Human stories, emotions, and expressions across candid moments.',
       photos: [
-        { title: 'Joy In Motion', image: '/photos/DSC_0171.JPG' },
-        { title: 'Skyward Gaze', image: '/photos/people.JPG' },
-        { title: 'Twilight Silhouette', image: '/photos/people_1.JPG' },
-        { title: 'Community Portrait', image: '/photos/people_2.JPG' },
-        { title: 'Close Portrait Study', image: '/photos/DSC_0237.JPG' },
+        { title: 'Reflective Gaze', image: '/photos/people.JPG' },
+        { title: 'Village Women Portrait', image: '/photos/people_1.JPG' },
+        { title: 'Twilight Silhouette', image: '/photos/people_2.JPG' },
+        { title: 'Holi Splash Portrait', image: '/photos/culture.JPG' },
+        { title: 'Festival Water Burst', image: '/photos/culture_1.JPG' },
+        { title: 'Joyful Pool Moment', image: '/photos/grihparvesh%20(758).JPG' },
+        { title: 'Family Holi Play', image: '/photos/DSC_0766.JPG' },
       ],
     },
     {
       title: 'Culture & Traditions',
       description: 'Festivals, rituals, and everyday cultural textures.',
       photos: [
-        { title: 'Grih Pravesh Ritual', image: '/photos/grihparvesh%20(758).JPG' },
-        { title: 'Color Splash Festival', image: '/photos/culture.JPG' },
-        { title: 'Festival Play', image: '/photos/culture_1.JPG' },
-        { title: 'Potter At Work', image: '/photos/DSC_0407.JPG' },
-        { title: 'Little Tibet Streetscape', image: '/photos/DSC_0265.JPG' },
+        { title: 'Ceremonial Kalash', image: '/photos/DSC_6510.JPG' },
+        { title: 'Potter At Work', image: '/photos/DSC_2138.JPG' },
+        { title: 'Little Tibet Facade', image: '/photos/DSC_1420.JPG' },
+        { title: 'Colorful Stair Geometry', image: '/photos/DSC_1419.JPG' },
       ],
     },
     {
       title: 'Wildlife & Nature',
       description: 'Encounters with wild life, birds, and natural behavior.',
       photos: [
-        { title: 'Forest Tiger Trail', image: '/photos/wildlife.JPG' },
-        { title: 'Tiger In Tall Grass', image: '/photos/DSC_1420.JPG' },
-        { title: 'Elephant Tusk Detail', image: '/photos/DSC_1419.JPG' },
-        { title: 'Elephant Bath', image: '/photos/DSC_6510.JPG' },
-        { title: 'Langur On Branch', image: '/photos/DSC_6944.JPG' },
-        { title: 'Seagull In Flight', image: '/photos/DSC_2138.JPG' },
+        { title: 'Seagull In Flight', image: '/photos/DSC_0237.JPG' },
+        { title: 'Langur On Timber', image: '/photos/wildlife.JPG' },
+        { title: 'Tiger On Forest Track', image: '/photos/DSC_0407.JPG' },
+        { title: 'Tiger In Tall Grass', image: '/photos/DSC_0329.JPG' },
+        { title: 'Elephant Tusk Curve', image: '/photos/RPP_2714.JPG' },
+        { title: 'Elephant River Bath', image: '/photos/RPP_2800.JPG' },
       ],
     },
     {
@@ -239,25 +251,109 @@ export default function RahulPrakashWebsite() {
       description: 'Built heritage, geometry, and structural forms.',
       photos: [
         { title: 'Gateway & Taj Frame', image: '/photos/monuments.JPG' },
-        { title: 'Color Study In Structure', image: '/photos/DSC_0516.JPG' },
+        { title: 'Upward Light Pole', image: '/photos/DSC_0238.JPG' },
+        { title: 'Sky Through Clouds', image: '/photos/DSC_0516.JPG' },
+        { title: 'Floating Bubble Moment', image: '/photos/DSC_6944.JPG' },
       ],
     },
     {
       title: 'Waterscapes & Journeys',
       description: 'Boats, shorelines, and light across travel landscapes.',
       photos: [
-        { title: 'Sunset Boats', image: '/photos/RPP_3308.JPG' },
-        { title: 'Harbor At Dusk', image: '/photos/DSC_0238.JPG' },
-        { title: 'Backwaters Morning', image: '/photos/DSC_1211.JPG' },
-        { title: 'Golden Hour Crossing', image: '/photos/RPP_2714.JPG' },
-        { title: 'Blue Water Horizon', image: '/photos/RPP_3590.JPG' },
-        { title: 'Red Sun Over Harbor', image: '/photos/RPP_1974.JPG' },
-        { title: 'Round Boat Stillness', image: '/photos/DSC_0329.JPG' },
-        { title: 'Light Through Clouds', image: '/photos/DSC_0766.JPG' },
-        { title: 'Sea Sparkle Drift', image: '/photos/RPP_2800.JPG' },
+        { title: 'Harbor Sunset Vessel', image: '/photos/DSC_0171.JPG' },
+        { title: 'Harbor Of Sails', image: '/photos/DSC_0265.JPG' },
+        { title: 'Sunset Fishing Boats', image: '/photos/RPP_3308.JPG' },
+        { title: 'Backwater Houseboats', image: '/photos/RPP_3590.JPG' },
+        { title: 'Coracle By The Shore', image: '/photos/RPP_1974.JPG' },
+        { title: 'Dusk Freedom Silhouette', image: '/photos/DSC_1211.JPG' },
       ],
     },
   ];
+
+  const entitySchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
+        name: SITE_NAME,
+        url: SITE_URL,
+        image: `${SITE_URL}/photos/people.JPG`,
+        jobTitle: "Product Management Leader",
+        description: SITE_DESCRIPTION,
+        sameAs: ["https://www.linkedin.com/in/prakashrahul/"],
+        knowsAbout: [
+          "Product Management",
+          "Digital Commerce",
+          "Omnichannel Strategy",
+          "AI Product Development",
+          "Retail Technology",
+          "Product Leadership",
+        ],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        description: SITE_DESCRIPTION,
+        inLanguage: "en-IN",
+        about: { "@id": `${SITE_URL}/#person` },
+      },
+      {
+        "@type": "Service",
+        "@id": `${SITE_URL}/#product-management-service`,
+        name: "Product Management Consulting",
+        provider: { "@id": `${SITE_URL}/#person` },
+        areaServed: "Worldwide",
+        serviceType: [
+          "Product Management Consulting",
+          "Digital Commerce Consulting",
+          "AI Product Strategy",
+          "Platform Transformation",
+        ],
+      },
+    ],
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "Who is Rahul Prakash?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Rahul Prakash is a Product Management and Digital Commerce leader with experience in building scalable platforms, leading AI product initiatives, and driving omnichannel retail transformation.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What does Rahul Prakash specialize in?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "He specializes in Product Strategy, Product Management, AI Product Development, Digital Commerce, Retail Technology, and enterprise platform transformation.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Does Rahul Prakash offer Product Management consulting?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. Rahul works with businesses on Product Management consulting, product roadmap prioritization, platform scaling, and growth-focused digital execution.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How can I contact Rahul Prakash for Product Management advisory?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "You can connect via email at rahul@srijanlabs.in or through LinkedIn to discuss Product Management, AI strategy, and digital commerce initiatives.",
+        },
+      },
+    ],
+  };
 
   return (
     <div className="min-h-screen overflow-x-clip bg-black text-white">
@@ -265,6 +361,15 @@ export default function RahulPrakashWebsite() {
         <div className="absolute left-0 top-0 h-[500px] w-[500px] rounded-full bg-cyan-500 blur-[140px]" />
         <div className="absolute bottom-0 right-0 h-[500px] w-[500px] rounded-full bg-blue-500 blur-[140px]" />
       </div>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(entitySchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-2xl">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-5 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
@@ -278,6 +383,7 @@ export default function RahulPrakashWebsite() {
           <nav className="flex flex-wrap gap-4 text-xs text-slate-300 sm:text-sm">
             <a href="#about" className="hover:text-white">About</a>
             <a href="#experience" className="hover:text-white">Experience</a>
+            <a href="#product-management" className="hover:text-white">Product Management</a>
             <a href="#ventures" className="hover:text-white">Ventures</a>
             <a href="#photography" className="hover:text-white">Photography</a>
             <a href="#contact" className="hover:text-white">Contact</a>
@@ -508,6 +614,37 @@ export default function RahulPrakashWebsite() {
                 {skill}
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="product-management" className="mx-auto max-w-7xl px-4 py-24 sm:px-6">
+        <div className="rounded-[36px] border border-white/10 bg-slate-900/80 p-6 sm:p-10 lg:p-14">
+          <div className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-cyan-300">
+            Product Management Expertise
+          </div>
+
+          <h3 className="mb-6 text-3xl font-black sm:text-4xl md:text-5xl">
+            Rahul Prakash: Product Management, AI Strategy & Digital Commerce Leadership
+          </h3>
+
+          <div className="space-y-5 text-base leading-relaxed text-slate-300 sm:text-lg">
+            <p>
+              Rahul Prakash is a Product Management leader with deep experience in digital commerce,
+              omnichannel retail, and enterprise platform transformation. His work focuses on building
+              scalable product systems, accelerating growth, and aligning product strategy with measurable
+              business outcomes.
+            </p>
+            <p>
+              As a Product Consultant, Rahul partners with founders and leadership teams on product roadmap
+              definition, prioritization frameworks, analytics-led decision making, and AI product execution.
+              He has led high-scale product programs supporting millions of users and complex commerce operations.
+            </p>
+            <p>
+              If you are looking for Product Management consulting, digital transformation guidance, or AI-driven
+              product strategy support, Rahul brings hands-on execution experience across retail technology,
+              platform modernization, and growth-focused product leadership.
+            </p>
           </div>
         </div>
       </section>
