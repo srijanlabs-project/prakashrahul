@@ -18,20 +18,26 @@ export default function TwitterImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "72px",
-          background:
-            "radial-gradient(circle at 80% 20%, #0ea5e9 0%, #0f172a 45%, #020617 100%)",
-          color: "white",
-          fontFamily: "Arial, sans-serif",
+          background: "#fbfaf7",
+          color: "#1a1611",
+          fontFamily: "Georgia, serif",
         }}
       >
-        <div style={{ fontSize: 74, fontWeight: 800, lineHeight: 1.05 }}>
+        <div style={{ fontSize: 74, fontWeight: 700, lineHeight: 1.05 }}>
           Rahul Prakash
         </div>
-        <div style={{ fontSize: 40, marginTop: 18, color: "#67e8f9" }}>
-          Product Management Consultant
+        <div style={{ fontSize: 40, marginTop: 18, color: "#ae4423" }}>
+          Product &amp; Platform Leader
         </div>
-        <div style={{ fontSize: 30, marginTop: 16, color: "#cbd5e1" }}>
-          Product Strategy | Digital Commerce | AI/ML Innovation
+        <div
+          style={{
+            fontSize: 28,
+            marginTop: 16,
+            color: "#6b6259",
+            fontFamily: "Arial, sans-serif",
+          }}
+        >
+          0→1 Product Building | Enterprise SaaS | AI &amp; Workflow Platforms
         </div>
       </div>
     ),

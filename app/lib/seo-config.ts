@@ -19,20 +19,25 @@ function normalizeSiteUrl(rawUrl?: string): string {
 
 export const SITE_NAME = "Rahul Prakash";
 export const SITE_TITLE =
-  "Rahul Prakash | Product Management Leader, Digital Commerce & AI Strategy";
+  "Rahul Prakash | Product & Platform Leader, 0→1 Product Building & AI SaaS";
 export const SITE_DESCRIPTION =
-  "Rahul Prakash is a Product Management and Digital Commerce leader helping businesses build high-scale platforms, AI-powered products, and growth-focused product strategies.";
+  "Rahul Prakash is a product and platform leader with 20+ years of experience building and scaling technology platforms from 0→1 across SaaS, retail, commerce, supply chain, logistics, payments, and marketplace businesses.";
 
 export const SITE_KEYWORDS = [
   "Rahul Prakash",
-  "Rahul Prakash Product Management",
-  "Product Management Leader",
+  "Rahul Prakash Product Leader",
+  "0 to 1 Product Building",
+  "Product & Platform Leader",
+  "Enterprise SaaS Product Leader",
+  "AI Workflow Platforms",
+  "Business Technology Leadership",
+  "Platform Architecture Strategy",
   "Product Consultant",
   "Digital Commerce Strategy",
+  "Supply Chain Platforms",
   "AI Product Development",
   "Retail Technology",
   "Omnichannel Commerce",
-  "Product Strategy",
   "Product Leadership India",
 ];
 
