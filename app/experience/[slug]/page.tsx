@@ -69,8 +69,11 @@ export default async function ExperienceDetailPage({
           <div className="mb-3 text-sm font-semibold uppercase tracking-[0.12em] text-muted">
             {entry.period}
           </div>
-          <h1 className="mb-4 font-display text-4xl font-medium leading-[1.05] text-foreground sm:text-5xl">
-            {entry.company}
+          <h1 className="mb-4 font-display leading-[1.05] text-foreground">
+            <span className="mb-1 block text-base font-semibold text-muted sm:text-lg">
+              Rahul Prakash &mdash;
+            </span>
+            <span className="block text-4xl font-medium sm:text-5xl">{entry.company}</span>
           </h1>
           <div className="mb-8 text-lg font-semibold text-accent">{entry.role}</div>
           <p className="text-lg leading-relaxed text-muted">{entry.summary}</p>

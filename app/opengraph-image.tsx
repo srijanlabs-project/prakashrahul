@@ -18,22 +18,22 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "center",
           padding: "72px",
-          background: "#fbfaf7",
-          color: "#1a1611",
+          background: "#0a0a0a",
+          color: "#ffffff",
           fontFamily: "Georgia, serif",
         }}
       >
         <div style={{ fontSize: 74, fontWeight: 700, lineHeight: 1.05 }}>
           Rahul Prakash
         </div>
-        <div style={{ fontSize: 40, marginTop: 18, color: "#ae4423" }}>
+        <div style={{ fontSize: 40, marginTop: 18, color: "#f2691c" }}>
           Product &amp; Platform Leader
         </div>
         <div
           style={{
             fontSize: 28,
             marginTop: 16,
-            color: "#6b6259",
+            color: "#a3a3a3",
             fontFamily: "Arial, sans-serif",
           }}
         >

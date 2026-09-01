@@ -19,9 +19,9 @@ function normalizeSiteUrl(rawUrl?: string): string {
 
 export const SITE_NAME = "Rahul Prakash";
 export const SITE_TITLE =
-  "Rahul Prakash | Product & Platform Leader, 0→1 Product Building & AI SaaS";
+  "Rahul Prakash | Product & Platform Leader, 0→1 SaaS";
 export const SITE_DESCRIPTION =
-  "Rahul Prakash is a product and platform leader with 20+ years of experience building and scaling technology platforms from 0→1 across SaaS, retail, commerce, supply chain, logistics, payments, and marketplace businesses.";
+  "Rahul Prakash is a product and platform leader with 20+ years building and scaling SaaS, retail, commerce, and supply chain platforms from 0→1.";
 
 export const SITE_KEYWORDS = [
   "Rahul Prakash",

@@ -24,8 +24,11 @@ export default function ExperienceIndexPage() {
           <div className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
             Leadership Journey
           </div>
-          <h1 className="mb-6 font-display text-4xl font-medium leading-[1.05] sm:text-5xl">
-            20+ years, company by company
+          <h1 className="mb-6 font-display leading-[1.05]">
+            <span className="mb-1 block text-base font-semibold text-muted sm:text-lg">
+              Rahul Prakash &mdash;
+            </span>
+            <span className="block text-4xl font-medium sm:text-5xl">20+ years, company by company</span>
           </h1>
           <p className="text-lg leading-relaxed text-muted">
             {SITE_NAME}{" "}
