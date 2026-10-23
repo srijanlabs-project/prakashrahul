@@ -1,4 +1,4 @@
-const FALLBACK_SITE_URL = "https://example.com";
+const FALLBACK_SITE_URL = "https://prakashrahul-production-bd7f.up.railway.app";
 
 function normalizeSiteUrl(rawUrl?: string): string {
   if (!rawUrl) return FALLBACK_SITE_URL;
