@@ -2,13 +2,14 @@
 
 import { useRef, useState } from "react";
 import { MAX_RESUME_BYTES, validateResumeMeta } from "@/app/lib/apply-rules";
+import { GENERAL_APPLICATION } from "@/app/lib/positions";
 
 type Status = "idle" | "submitting" | "success";
 
 const inputClass =
   "w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-[#f2691c]";
 
-export function ApplyForm() {
+export function ApplyForm({ roles, initialRole }: { roles: string[]; initialRole: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState<string | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
@@ -33,8 +34,32 @@ export function ApplyForm() {
     }
 
     setStatus("submitting");
+
+    // Copy the file into memory first. Uploading straight from the file picker fails
+    // (as a generic network error) if the file is cloud-only (OneDrive, Google Drive),
+    // on removable media, or changed after it was chosen.
+    let resumeBytes: ArrayBuffer;
     try {
-      const response = await fetch("/api/apply", { method: "POST", body: data });
+      resumeBytes = await resume.arrayBuffer();
+    } catch (readError) {
+      console.error("Apply: could not read the selected file.", readError);
+      setError(
+        "We couldn't read that file. If it's stored in OneDrive, Google Drive or on a USB drive, copy it to your Desktop, choose it again and retry.",
+      );
+      setStatus("idle");
+      return;
+    }
+    data.set("resume", new File([resumeBytes], resume.name, { type: "application/pdf" }));
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 60_000);
+
+    try {
+      const response = await fetch("/api/apply", {
+        method: "POST",
+        body: data,
+        signal: controller.signal,
+      });
       const result = (await response.json().catch(() => null)) as
         | { ok: boolean; error?: string }
         | null;
@@ -48,9 +73,16 @@ export function ApplyForm() {
       form.reset();
       setFileName(null);
       setStatus("success");
-    } catch {
-      setError("Network error. Please check your connection and try again.");
+    } catch (submitError) {
+      console.error("Apply: request failed.", submitError);
+      setError(
+        controller.signal.aborted
+          ? "The upload took too long. Please check your connection and try again."
+          : "We couldn't reach the server. Please check your connection, disable any ad blocker for this page, and try again.",
+      );
       setStatus("idle");
+    } finally {
+      clearTimeout(timeout);
     }
   }
 
@@ -109,7 +141,19 @@ export function ApplyForm() {
           <span className="mb-2 block text-xs font-semibold uppercase tracking-[0.12em] text-white/60">
             Role applying for
           </span>
-          <input name="role" type="text" required maxLength={100} className={inputClass} placeholder="e.g. Product Manager" />
+          <select name="role" required defaultValue={initialRole} className={`${inputClass} appearance-none`}>
+            <option value="" disabled>
+              Select a role
+            </option>
+            {roles.map((title) => (
+              <option key={title} value={title} className="text-black">
+                {title}
+              </option>
+            ))}
+            <option value={GENERAL_APPLICATION} className="text-black">
+              {GENERAL_APPLICATION}
+            </option>
+          </select>
         </label>
       </div>
 
